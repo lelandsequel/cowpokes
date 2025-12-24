@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/Navbar";
+import { Link } from "react-router-dom";
 
 const portfolioImages = [
   "/portfolio/1.jpg",
@@ -40,19 +42,12 @@ const features = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      {/* Editorial Header */}
-      <nav className="border-b px-6 py-4 flex justify-between items-center text-xs tracking-widest uppercase">
-        <div className="font-bold">Cowpokes / ATX</div>
-        <div className="flex gap-8">
-          <a href="#portfolio" className="hover:underline">Work</a>
-          <a href="https://www.slowpoketattoos.com/cowpokesbooking" className="hover:underline">Booking</a>
-        </div>
-      </nav>
-
-      {/* Hero: Asymmetric Editorial */}
-      <section className="px-6 py-20 lg:py-32 grid lg:grid-cols-2 gap-12 items-end border-b">
-        <div>
+    <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="relative grid min-h-[90vh] grid-cols-1 md:grid-cols-2 pt-16">
+        <div className="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-24">
           <Badge variant="outline" className="mb-8 rounded-none border-foreground/20 text-[10px] uppercase tracking-[0.2em]">
             Archival Handpoke Studio
           </Badge>
@@ -62,16 +57,16 @@ export default function Home() {
           <p className="max-w-md text-lg leading-relaxed text-muted-foreground mb-12 border-l-2 border-primary pl-6">
             Julia is an archival tattoo expert based in North Austin. Specializing in high-contrast handpoked art designed to age gracefully.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-none h-16 px-10 text-lg uppercase font-bold" asChild>
-              <a href="https://www.slowpoketattoos.com/cowpokesbooking" target="_blank" rel="noopener noreferrer">
-                Secure a Session <ArrowRight className="ml-2 size-5" />
-              </a>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button size="lg" className="rounded-none px-8 font-bold uppercase tracking-widest h-14" asChild>
+              <Link to="/booking">
+                Book Appointment <ArrowRight className="ml-2 size-4" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-none h-16 px-10 text-lg uppercase font-bold border-foreground" asChild>
-              <a href="https://www.instagram.com/cowpokes_/" target="_blank" rel="noopener noreferrer">
-                <Instagram className="mr-2 size-5" /> Instagram
-              </a>
+            <Button size="lg" variant="outline" className="rounded-none px-8 font-bold uppercase tracking-widest h-14" asChild>
+              <Link to="/portfolio">
+                View Archive
+              </Link>
             </Button>
           </div>
         </div>
@@ -150,7 +145,7 @@ export default function Home() {
             <p className="text-muted-foreground">Located in a private studio in North Austin. Exact location shared upon booking confirmation.</p>
           </div>
           <Button variant="link" className="p-0 h-auto text-foreground font-bold uppercase tracking-widest text-xs" asChild>
-            <a href="https://www.slowpoketattoos.com/cowpokesbooking">Book Now →</a>
+            <Link to="/booking">Book Now →</Link>
           </Button>
         </div>
       </section>
@@ -162,6 +157,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
