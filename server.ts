@@ -63,6 +63,7 @@ function configureProduction(app: Hono) {
   app.use("/portfolio/*", serveStatic({ root: "./public" }));
   app.use("/sitemap.xml", serveStatic({ root: "./dist" }));
   app.use("/robots.txt", serveStatic({ root: "./dist" }));
+  app.use("/seo-deck.html", serveStatic({ root: "./dist" }));
   
   app.use(async (c, next) => {
     if (c.req.method !== "GET") {
@@ -138,6 +139,7 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
 
   return vite;
 }
+
 
 
 
