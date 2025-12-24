@@ -3,7 +3,8 @@
   "local_port": 52437,
   "entrypoint": "bun run prod",
   "env": {
-    "VITE_ZO_SITE_DEMO_VARIANT": "marketing"
+    "VITE_ZO_SITE_DEMO_VARIANT": "marketing",
+    "FORCE_LOCAL_PORT": "true"
   },
   "publish": {
     "label": "cowpokes-atx",
@@ -17,4 +18,5 @@
     }
   }
 }
+
 

@@ -46,7 +46,7 @@ if (mode === "production") {
  * DO NOT edit this port manually. Ports are managed by the system via the zosite.json config.
  */
 const port =
-  mode === "production"
+  mode === "production" && !process.env.FORCE_LOCAL_PORT
     ? (config.publish?.published_port ?? config.local_port)
     : config.local_port;
 
@@ -135,5 +135,6 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
 
   return vite;
 }
+
 
 
