@@ -72,8 +72,8 @@ export default function Home() {
         </div>
         <div className="hidden lg:block relative aspect-[4/5] bg-muted overflow-hidden">
           <img 
-            src="/portfolio/3.jpg" 
-            alt="Handpoke detail" 
+            src="/portfolio/julia.jpg" 
+            alt="Julia - Archival Tattoo Expert" 
             className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-1000"
           />
           <div className="absolute bottom-4 right-4 text-[10px] uppercase tracking-widest vertical-text opacity-50">
@@ -157,6 +157,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
