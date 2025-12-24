@@ -60,6 +60,7 @@ export default { fetch: app.fetch, port, idleTimeout: 255 };
  */
 function configureProduction(app: Hono) {
   app.use("/assets/*", serveStatic({ root: "./dist" }));
+  app.use("/portfolio/*", serveStatic({ root: "./public" }));
   app.use(async (c, next) => {
     if (c.req.method !== "GET") {
       return next();
@@ -132,3 +133,4 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
 
   return vite;
 }
+
