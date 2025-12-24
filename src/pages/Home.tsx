@@ -1,8 +1,10 @@
 import {
   Skull,
-  Scissors,
-  Cross,
-  Bookmark,
+  Lasso,
+  Sun,
+  Axe,
+  Flower,
+  Zap,
   MapPin,
   Instagram,
   ArrowRight,
@@ -27,18 +29,18 @@ const portfolioImages = [
 const features = [
   {
     icon: Skull,
-    title: "Archival Expert",
-    description: "Handpoked tattoos designed for longevity and clarity using archival techniques.",
+    title: "Dead Simple",
+    description: "No machines. No noise. Just needle and ink.",
   },
   {
-    icon: Scissors,
-    title: "Stick & Poke",
-    description: "Traditional manual method. No machines, just precision and patience.",
+    icon: Lasso,
+    title: "Roped Tight",
+    description: "Precision lines that hold up over time. Archival quality.",
   },
   {
-    icon: ShieldCheck,
-    title: "Private Studio",
-    description: "North Austin based, queer and inclusive space for all bodies.",
+    icon: Sun,
+    title: "Texas Made",
+    description: "Born and bred in the heat. Local art for local folks.",
   },
 ];
 
@@ -56,27 +58,27 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative grid min-h-[90vh] grid-cols-1 md:grid-cols-2 pt-16">
-        <div className="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-24 relative z-10">
-          <Badge variant="outline" className="mb-8 rounded-none border-foreground/20 text-[10px] uppercase tracking-[0.2em]">
-            Archival Handpoke Studio
+      <section className="relative grid min-h-[90vh] grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-col justify-end p-6 lg:p-12 xl:p-24 relative z-10 bg-gradient-to-t from-background via-background/80 to-transparent lg:bg-none">
+          <Badge variant="outline" className="w-fit mb-6 border-primary text-primary font-bold tracking-widest uppercase">
+            <ShieldCheck className="mr-1 size-3" /> Est. 2024
           </Badge>
-          <h1 className="text-6xl lg:text-7xl xl:text-9xl font-black leading-[0.8] tracking-tighter mb-12">
-            PERMANENT<br />DECOR.
+          <h1 className="text-6xl lg:text-7xl xl:text-9xl font-black tracking-tighter mb-6 leading-[0.85] text-primary">
+            COW<br />POKES.
           </h1>
-          <p className="max-w-md text-lg leading-relaxed text-muted-foreground mb-12 border-l-2 border-primary pl-6">
-            Julia is an archival tattoo expert based in North Austin. Specializing in high-contrast handpoked art designed to age gracefully.
+          <p className="text-xl max-w-md mb-8 font-bold tracking-tight text-muted-foreground">
+            Fine handpoked tattoos for the rough and tumble. North Austin, TX.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" className="rounded-none px-8 font-bold uppercase tracking-widest h-14" asChild>
+            <Button size="lg" className="rounded-none px-8 font-bold tracking-widest border-2 border-primary bg-primary text-primary-foreground hover:bg-transparent hover:text-primary transition-all" asChild>
               <Link to="/booking">
-                Book Appointment <ArrowRight className="ml-2 size-4" />
+                GET POKED <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-none px-8 font-bold uppercase tracking-widest h-14" asChild>
-              <Link to="/portfolio">
-                View Archive
-              </Link>
+            <Button size="lg" variant="outline" className="rounded-none px-8 font-bold tracking-widest border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all" asChild>
+              <a href="https://www.instagram.com/cowpokes_/" target="_blank" rel="noopener noreferrer">
+                <Instagram className="mr-2 size-4" /> INSTAGRAM
+              </a>
             </Button>
           </div>
         </div>
@@ -106,11 +108,11 @@ export default function Home() {
       </section>
 
       {/* Portfolio: Editorial Grid */}
-      <section id="portfolio" className="px-6 py-24 border-b bg-primary text-primary-foreground">
+      <section id="portfolio" className="px-6 py-24 border-b border-t border-primary/20 bg-primary/5 text-primary-foreground">
         <div className="flex justify-between items-end mb-16">
-          <h2 className="text-5xl lg:text-7xl font-black tracking-tighter">THE<br />ARCHIVE.</h2>
-          <div className="text-right text-xs uppercase tracking-widest max-w-[200px] opacity-70">
-            Handpoked and healed. Designed for longevity.
+          <h2 className="text-5xl lg:text-7xl font-black tracking-tighter text-primary">FRESH<br />INK.</h2>
+          <div className="text-right text-xs uppercase tracking-widest max-w-[200px] opacity-70 text-primary">
+            Handpoked and healed.
           </div>
         </div>
         
@@ -190,6 +192,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
