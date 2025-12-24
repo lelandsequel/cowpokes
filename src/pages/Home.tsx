@@ -9,6 +9,7 @@ import {
   Instagram,
   ArrowRight,
   ShieldCheck,
+  FileBadge,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -107,6 +108,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certification Section */}
+      <section className="border-b bg-muted/30 px-6 py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <Badge variant="outline" className="mb-6 border-primary text-primary font-bold tracking-widest uppercase">
+            <FileBadge className="mr-1 size-3" /> OFFICIAL PAPERS
+          </Badge>
+          <h2 className="mb-12 text-4xl font-black tracking-tighter text-primary">
+            CERTIFIED &<br />ACCOUNTABLE.
+          </h2>
+          
+          <div className="relative mx-auto max-w-md rotate-1 transform transition-transform hover:rotate-0 duration-500">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/20 backdrop-blur-sm -rotate-2 z-20"></div>
+            <div className="border-4 border-primary p-2 bg-background shadow-xl">
+              <img 
+                src="/certification.jpg" 
+                alt="Bloodborne Pathogens Certification" 
+                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+            <p className="mt-4 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              Bloodborne Pathogens Certified • Austin, TX
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio: Editorial Grid */}
       <section id="portfolio" className="px-6 py-24 border-b border-t border-primary/20 bg-primary/5 text-primary-foreground">
         <div className="flex justify-between items-end mb-16">
@@ -192,6 +219,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
