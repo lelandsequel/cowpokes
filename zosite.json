@@ -1,0 +1,19 @@
+{
+  "name": "cowpokes-atx",
+  "local_port": 52437,
+  "entrypoint": "bun run dev",
+  "env": {
+    "VITE_ZO_SITE_DEMO_VARIANT": "marketing"
+  },
+  "publish": {
+    "label": "cowpokes-atx",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 51296,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none",
+      "VITE_ZO_SITE_DEMO_VARIANT": "marketing"
+    }
+  }
+}
