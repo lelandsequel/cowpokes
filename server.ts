@@ -34,6 +34,25 @@ app.post("/api/_zo/demo/register", async (c) => {
   return c.json(registration, 201);
 });
 
+// Explicitly handle seo-deck.html at the top level to work in both Dev and Prod
+app.get("/seo-deck.html", async (c) => {
+  // Try dist first (prod), then public (dev)
+  let file = Bun.file("./dist/seo-deck.html");
+  if (!(await file.exists())) {
+    file = Bun.file("./public/seo-deck.html");
+  }
+  
+  if (await file.exists()) {
+    return new Response(file, {
+      headers: {
+        "Content-Type": "text/html",
+        "Cache-Control": "no-cache",
+      },
+    });
+  }
+  return c.text("Deck not found", 404);
+});
+
 if (mode === "production") {
   configureProduction(app);
 } else {
@@ -63,7 +82,6 @@ function configureProduction(app: Hono) {
   app.use("/portfolio/*", serveStatic({ root: "./public" }));
   app.use("/sitemap.xml", serveStatic({ root: "./dist" }));
   app.use("/robots.txt", serveStatic({ root: "./dist" }));
-  app.use("/seo-deck.html", serveStatic({ root: "./dist" }));
   
   app.use(async (c, next) => {
     if (c.req.method !== "GET") {
@@ -139,6 +157,8 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
 
   return vite;
 }
+
+
 
 
 
