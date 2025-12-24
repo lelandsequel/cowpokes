@@ -12,6 +12,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { baseSchema, neighborhoods } from "@/lib/seo-data";
 
 const portfolioImages = [
   "/portfolio/1.jpg",
@@ -42,7 +44,15 @@ const features = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+    <main className="min-h-screen">
+      <Helmet>
+        <title>Cowpokes | Handpoke Tattoos Austin, TX</title>
+        <meta name="description" content="Stick and poke tattoos by Julia, an archival tattoo expert based in North Austin, TX. Queer and inclusive private studio specializing in longevity." />
+        <link rel="canonical" href="https://cowpokes-atx-sokpyeon.zocomputer.io/" />
+        <script type="application/ld+json">
+          {JSON.stringify(baseSchema)}
+        </script>
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}
@@ -150,13 +160,37 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="px-6 py-12 flex justify-between items-center text-[10px] uppercase tracking-[0.3em] opacity-50">
-        <div>© {new Date().getFullYear()} Cowpokes ATX</div>
-        <div>North Austin Private Studio</div>
+      {/* pSEO Footer Links */}
+      <footer className="px-6 py-12 bg-muted/20 border-t">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+             <h4 className="font-bold uppercase tracking-widest mb-4 text-xs">Cowpokes ATX</h4>
+             <p className="text-xs text-muted-foreground">North Austin Private Studio<br/>By Appointment Only</p>
+          </div>
+          <div className="md:col-span-3">
+            <h4 className="font-bold uppercase tracking-widest mb-4 text-xs">Serving Austin Neighborhoods</h4>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground">
+              {neighborhoods.map((hood) => (
+                <Link 
+                  key={hood} 
+                  to={`/locations/${hood.toLowerCase().replace(/ /g, '-')}`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {hood} Tattoo
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.3em] opacity-50">
+          <div>© {new Date().getFullYear()} Cowpokes ATX</div>
+          <div>Archival Handpoke</div>
+        </div>
       </footer>
     </main>
   );
 }
+
 
 
 

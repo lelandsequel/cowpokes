@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cowpokes-atx-sokpyeon.zocomputer.io/sitemap.xml
