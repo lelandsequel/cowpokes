@@ -87,6 +87,8 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
     appType: "custom",
   });
 
+  app.use("/portfolio/*", serveStatic({ root: "./public" }));
+
   app.use("*", async (c, next) => {
     if (c.req.path.startsWith("/api/")) {
       return next();
@@ -133,4 +135,5 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
 
   return vite;
 }
+
 
