@@ -57,11 +57,11 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative grid min-h-[90vh] grid-cols-1 md:grid-cols-2 pt-16">
-        <div className="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-24">
+        <div className="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-24 relative z-10">
           <Badge variant="outline" className="mb-8 rounded-none border-foreground/20 text-[10px] uppercase tracking-[0.2em]">
             Archival Handpoke Studio
           </Badge>
-          <h1 className="text-6xl lg:text-9xl font-black leading-[0.8] tracking-tighter mb-12">
+          <h1 className="text-6xl lg:text-7xl xl:text-9xl font-black leading-[0.8] tracking-tighter mb-12">
             PERMANENT<br />DECOR.
           </h1>
           <p className="max-w-md text-lg leading-relaxed text-muted-foreground mb-12 border-l-2 border-primary pl-6">
@@ -190,6 +190,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
