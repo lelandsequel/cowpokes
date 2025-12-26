@@ -13,12 +13,12 @@
 
   --radius: 0;
   --background: 40 20% 94%; /* Parchment */
-  --foreground: 20 10% 15%; /* Deep Brown/Black */
+  --foreground: 20 10% 5%; /* Darker Deep Brown/Black */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.02 20);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 20);
-  --primary: 20 50% 30%; /* Saddle Leather / Rust */
+  --primary: 20 60% 20%; /* Darker Saddle Leather / Rust */
   --primary-foreground: 40 20% 94%;
   --secondary: oklch(0.9 0.05 60);
   --secondary-foreground: oklch(0.25 0.05 30);
