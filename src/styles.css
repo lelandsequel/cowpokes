@@ -12,22 +12,25 @@
   -moz-osx-font-smoothing: grayscale;
 
   --radius: 0;
-  --background: 40 20% 94%; /* Parchment */
-  --foreground: 20 10% 5%; /* Darker Deep Brown/Black */
+  --background: hsl(40 20% 94%);
+  /* Parchment */
+  --foreground: hsl(20 10% 5%);
+  /* Darker Deep Brown/Black */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.02 20);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 20);
-  --primary: 20 60% 20%; /* Darker Saddle Leather / Rust */
-  --primary-foreground: 40 20% 94%;
+  --primary: hsl(20 60% 20%);
+  /* Darker Saddle Leather / Rust */
+  --primary-foreground: hsl(40 20% 94%);
   --secondary: oklch(0.9 0.05 60);
   --secondary-foreground: oklch(0.25 0.05 30);
-  --muted: 35 15% 85%;
-  --muted-foreground: 25 10% 40%;
+  --muted: hsl(35 15% 85%);
+  --muted-foreground: hsl(25 10% 40%);
   --accent: oklch(0.85 0.1 50);
   --accent-foreground: oklch(0.25 0.05 30);
   --destructive: oklch(0.5 0.2 25);
-  --border: 20 30% 70%;
+  --border: hsl(20 30% 70%);
   --input: oklch(0.2 0.02 30 / 0.1);
   --ring: oklch(0.25 0.05 30);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -125,21 +128,26 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Courier Prime", "Courier New", Courier, monospace;
     background-color: #f5f2eb;
-    background-image: 
+    background-image:
       url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
       linear-gradient(to bottom right, #f5f2eb 0%, #e6dfcf 100%);
     background-attachment: fixed;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Rye", serif;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--primary);
   }
 }
-
-
