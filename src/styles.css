@@ -142,20 +142,4 @@ body {
   }
 }
 
-@layer base {
-  :root {
-    --muted-foreground: 20 12% 28%;
-  }
-  a {
-    color: hsl(var(--primary));
-  }
-  p, li, label, input, textarea {
-    color: hsl(var(--foreground));
-  }
-  .text-muted-foreground {
-    color: hsl(var(--muted-foreground)) !important;
-  }
-}
-
-
 
